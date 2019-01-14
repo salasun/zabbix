@@ -1,0 +1,410 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_ZABBIX-MYSQL",
+      "label": "zabbix-mysql",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "mysql",
+      "pluginName": "MySQL"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "5.1.3"
+    },
+    {
+      "type": "datasource",
+      "id": "mysql",
+      "name": "MySQL",
+      "version": "5.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
+      "version": "5.0.0"
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "columns": [],
+      "datasource": "${DS_ZABBIX-MYSQL}",
+      "fontSize": "80%",
+      "gridPos": {
+        "h": 94,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "links": [],
+      "pageSize": 200,
+      "scroll": false,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": false
+      },
+      "styles": [
+        {
+          "alias": "Read vda",
+          "colorMode": "value",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "pattern": "v5",
+          "preserveFormat": false,
+          "sanitize": false,
+          "thresholds": [
+            "10485760",
+            "104857600"
+          ],
+          "type": "number",
+          "unit": "Bps"
+        },
+        {
+          "alias": "CPU iowait",
+          "colorMode": "value",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkUrl": "",
+          "pattern": "v1",
+          "thresholds": [
+            "10",
+            "30"
+          ],
+          "type": "number",
+          "unit": "percent"
+        },
+        {
+          "alias": "Free /",
+          "colorMode": "value",
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "v2",
+          "thresholds": [
+            "10",
+            "20"
+          ],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "Free /home",
+          "colorMode": "value",
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "v3",
+          "thresholds": [
+            "10",
+            "20"
+          ],
+          "type": "number",
+          "unit": "percent"
+        },
+        {
+          "alias": "Free Mem",
+          "colorMode": "value",
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "v4",
+          "thresholds": [
+            "1073741824",
+            "10737418240"
+          ],
+          "type": "number",
+          "unit": "bytes"
+        },
+        {
+          "alias": "Eth0 IN",
+          "colorMode": "value",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "v9",
+          "thresholds": [
+            "10485760",
+            "104857600"
+          ],
+          "type": "number",
+          "unit": "bps"
+        },
+        {
+          "alias": "Eth0 OUT",
+          "colorMode": "value",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "v10",
+          "thresholds": [
+            "10485760",
+            "104857600"
+          ],
+          "type": "number",
+          "unit": "bps"
+        },
+        {
+          "alias": "Eth1 IN",
+          "colorMode": "value",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "v11",
+          "thresholds": [
+            "10485760",
+            "104857600"
+          ],
+          "type": "number",
+          "unit": "bps"
+        },
+        {
+          "alias": "Eth1 OUT",
+          "colorMode": "value",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "v12",
+          "thresholds": [
+            "10485760",
+            "104857600"
+          ],
+          "type": "number",
+          "unit": "bps"
+        },
+        {
+          "alias": "UPTIME",
+          "colorMode": "value",
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "v13",
+          "thresholds": [
+            "259200",
+            "604800"
+          ],
+          "type": "number",
+          "unit": "dtdurations"
+        },
+        {
+          "alias": "Write vda",
+          "colorMode": "value",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "v6",
+          "thresholds": [
+            "10485760",
+            "104857600"
+          ],
+          "type": "number",
+          "unit": "Bps"
+        },
+        {
+          "alias": "Read vdb",
+          "colorMode": "value",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "v7",
+          "thresholds": [
+            "10485760",
+            "104857600"
+          ],
+          "type": "number",
+          "unit": "Bps"
+        },
+        {
+          "alias": "Write vdb",
+          "colorMode": "value",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "pattern": "v8",
+          "thresholds": [
+            "10485760",
+            "104857600"
+          ],
+          "type": "number",
+          "unit": "Bps"
+        },
+        {
+          "alias": "host",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": true,
+          "linkTooltip": "goto $__cell",
+          "linkUrl": "/dashboard/db/system-monitor-host?orgId=1&var-host=$__cell ",
+          "pattern": "host",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "alias": "",
+          "application": {
+            "filter": ""
+          },
+          "format": "table",
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "host": {
+            "filter": ""
+          },
+          "item": {
+            "filter": ""
+          },
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false
+          },
+          "rawSql": "select host host, \n max(case name when \"CPU iowait time\" then value else 0 end) v1,\n max(case name when \"Free disk space on / (percentage)\" then value else 0 end) v2, \n max(case name when \"Free disk space on /home (percentage)\" then value else 0 end) v3,\n max(case name when \"Free memory\" then value else 0 end) v4,\n max(case name when \"Read speed on vda\" then value else 0 end) v5,\n max(case name when \"Write speed on vda\" then value else 0 end) v6,\n max(case name when \"Read speed on vdb\" then value else 0 end) v7,\n max(case name when \"Write speed on vdb\" then value else 0 end) v8,\n max(case name when \"Network traffic on eth0 incoming\" then value else 0 end) v9,\n max(case name when \"Network traffic on eth0 outing\" then value else 0 end) v10,\n max(case name when \"Network traffic on eth1 incoming\" then value else 0 end) v11,\n max(case name when \"Network traffic on eth1 outing\" then value else 0 end) v12,\n max(case name when \"System uptime\" then value else 0 end) v13\nfrom \n(\nselect hi.host, hi.name, ifnull(t.value_max, 0) value from (select h.host, i.itemid,i.name from items i, (select * from hosts where host LIKE \"edu%\" OR \"web%\") h where h.hostid = i.hostid and i.key_ in (\"vm.memory.size[free]\",\"net.if.in[eth0]\",\"net.if.out[eth0]\",\"net.if.in[eth1]\",\"net.if.out[eth1]\",\"system.uptime\")) hi\nleft join trends_uint t on hi.itemid = t.itemid where from_unixtime(t.clock) = DATE_FORMAT(date_sub(now(), interval 1 hour),'%Y-%m-%d %H:00:00')\nunion all\nselect hi.host, hi.name, ifnull(t.value_max, 0) value from (select h.host, i.itemid,i.name from items i, (select * from hosts where host LIKE \"edu%\" OR \"web%\") h where h.hostid = i.hostid and i.key_ in (\"system.cpu.util[,iowait]\",\"vfs.fs.size[/,pfree]\",\"vfs.fs.size[/home,pfree]\",\"vfs.dev.read[/dev/vda,Bps]\",\"vfs.dev.write[/dev/vda,Bps]\",\"vfs.dev.read[/dev/vdb,Bps]\",\"vfs.dev.write[/dev/vdb,Bps]\")) hi\nleft join trends t on hi.itemid = t.itemid where from_unixtime(t.clock) = DATE_FORMAT(date_sub(now(), interval 1 hour),'%Y-%m-%d %H:00:00')\n) a\ngroup by a.host order by a.host;",
+          "refId": "A",
+          "triggers": {
+            "acknowledged": 2,
+            "count": true,
+            "minSeverity": 3
+          }
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transform": "table",
+      "transparent": true,
+      "type": "table"
+    }
+  ],
+  "schemaVersion": 16,
+  "style": "dark",
+  "tags": [
+    "host",
+    "global",
+    "latest"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "System Monitor Global",
+  "uid": "000000015",
+  "version": 18
+}
